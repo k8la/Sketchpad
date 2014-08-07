@@ -1,5 +1,6 @@
 $(document).ready(function() {
   generateGrid(16);
+  trailEffect();
 });
 
 function generateGrid(num) {
@@ -9,4 +10,10 @@ function generateGrid(num) {
   }
   $('.cell').height(cellSize);
   $('.cell').width(cellSize);
+}
+
+function trailEffect () {
+  $('.cell').mouseenter(function() {
+    $(this).css({'background-color': '#FF9900'})
+  });
 }
