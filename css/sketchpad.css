@@ -2,5 +2,13 @@ div {
 	height: 400px;
 	width: 400px;
 	outline: #000000 solid thin;
-	/*margin: auto;*/
+	margin: auto;
+}
+
+.cell {
+	display: inline-block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	outline: #000000 solid thin;
 }

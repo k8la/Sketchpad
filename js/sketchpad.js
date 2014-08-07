@@ -1,4 +1,12 @@
 $(document).ready(function() {
-  $('div').css({margin: 'auto'});
+  generateGrid(16);
 });
 
+function generateGrid(num) {
+  cellSize = 400/num
+  for (var i = 0; i < (num*num); i++) {
+    $('#container').prepend("<div class='cell'></div>");
+  }
+  $('.cell').height(cellSize);
+  $('.cell').width(cellSize);
+}
