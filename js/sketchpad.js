@@ -3,8 +3,8 @@ $(document).ready(function() {
   generateGrid(size);
   trailEffect();
   clearButton();
-  
-  
+  rainbowEffect();
+  // gradientEffect();
 });
 
 function generateGrid(num) {
@@ -25,8 +25,8 @@ function trailEffect () {
 function clearButton() {
   $('#clear').click(function() {
     $('#container').html('')
-    $('.cell').css('background-color', '#FFFFFF');
     userInput()
+    trailEffect();
   });
 
 }
@@ -34,4 +34,27 @@ function clearButton() {
 function userInput() {
   size = prompt('Enter a number');
   generateGrid(size);
+}
+
+function rainbowEffect() {
+  $('#rainbow').click(function() {
+    // $('#container').html('');
+    $('.cell').mouseenter(function() {
+      $(this).css({'background-color': randomColor()})
+    });
+  });
+}
+
+// function gradientEffect() {
+//   $('#gradient').click(function() {
+//     // $('#container').html('');
+//     $('.cell').mouseenter(function() {
+//       $(this).css({'opacity': })
+//     });
+//   });
+// }
+
+function randomColor(){
+  var color = Math.floor(Math.random() * 16777216).toString(16);
+  return '#000000'.slice(0, -color.length) + color;
 }
